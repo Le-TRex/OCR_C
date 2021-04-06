@@ -1,24 +1,28 @@
-##Include <br/> `#include<lib>`
+##Compilation avec flags
+`gcc -Wall -Wextra -Werror -o nomDuBinaire main.c`
 
-##Commentaires <br /> `// commentaires ligne`
+##Include
+`#include<lib>`
+
+##Commentaires 
+`// commentaires ligne`
 ```
 /*
  commentaires bloc
 */
   ```
-##Caractères alias 
+##Caractères "spéciaux"
 
-| caractère | Meaning        |
-|---        |---             |
-| \n        | Retour chariot |
-| \t        | Tabulation     |
-| \0        |  |
-|           |  |
-|           |  |
-|           |  |
-|           |  |
-|           |  |
-|           |  |
+| caractère | Meaning          | Exceptions       |
+|---        |:---:             |---               |
+|"%d"       | int              |
+|"%ld"      | long             |
+|"%f"       | float            |
+|"%f"       | double           | avec scanf "%lf" |
+|"%s"       | suite de char    |
+| \n        | Retour chariot   |
+| \t        | Tabulation       |
+| \0        | Fin d'expression |
 
 ##RAM
 
@@ -44,6 +48,17 @@ Chaque "case" mémoire est "représentée" par une adresse.
 | unsigned long | 0              | 4 294 967 295 | Uniquement +   |
 | float         | -1x1037        | 1x1037        | NA             |
 | double        | -1x1037        | 1x1037        | NA             |
+
+##Division
+```
+double result;
+
+result = 5/2; 
+==> 2
+
+result = 5.0/2.0; 
+==> 2.500000
+```
 
 ##Ressources :
  * [ASCII](https://fr.wikibooks.org/wiki/Les_ASCII_de_0_%C3%A0_127/La_table_ASCII)
