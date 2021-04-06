@@ -32,7 +32,10 @@ int main (int argc, char **argv[]) {
      * ascii / ==> 47
      * */
 
-    if (symbole == 43) {
+    if(operande1 == 19 && operande2 == 92){
+        printf("\tHappy Birthday Sister !! XOXO\n");
+    }
+    else if (symbole == 43) {
         resultat = operande1 + operande2;
         printf("\t%d %c %d = %d \n", operande1, symbole, operande2, resultat);
     }else if (symbole == 45) {
