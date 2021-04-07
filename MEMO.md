@@ -1,8 +1,9 @@
 ##Compilation avec flags
 `gcc -Wall -Wextra -Werror -o nomDuBinaire main.c`
 
-##Include
-`#include<lib>`
+##Include & librairies
+`#include<lib>` <br/>
+maths = math.h
 
 ##Commentaires 
 `// commentaires ligne`
