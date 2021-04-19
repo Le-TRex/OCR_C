@@ -12,6 +12,7 @@ int main (int argc, char **argv[]) {
 
     int mysteryNumber;
     int chosenNumber;
+    int numberOfTrials = 0;
 
     srand(time(NULL)); //permet l'utilisation de la fonction rand()
 
@@ -21,6 +22,7 @@ int main (int argc, char **argv[]) {
     printf("\t## Quel est le nombre ? (entre 1 et 100) ##\n");
 
     do {
+        numberOfTrials ++ ;
         scanf("%d", &chosenNumber);
 
         if ( chosenNumber < 1 || chosenNumber >100) {
@@ -30,7 +32,7 @@ int main (int argc, char **argv[]) {
         } else if (chosenNumber < mysteryNumber) {
             printf("\t## Le nombre mystère est plus grand ! Réessayez :) ##\n");
         } else if (chosenNumber == mysteryNumber) {
-            printf("\t## BRAVO ! Vous avez découvert le nombre mystère : %d ! ##\n", mysteryNumber);
+            printf("\t## BRAVO ! En %d coups, vous avez découvert le nombre mystère : %d ! ##\n", numberOfTrials, mysteryNumber);
         }
     } while (chosenNumber != mysteryNumber);
 
