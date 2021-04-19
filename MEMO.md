@@ -63,4 +63,4 @@ result = 5.0/2.0;
 
 ##Ressources :
  * [ASCII](https://fr.wikibooks.org/wiki/Les_ASCII_de_0_%C3%A0_127/La_table_ASCII)
- * 
+ * [SWITCH](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c/14612-les-conditions#/id/r-2188321)
