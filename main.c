@@ -1,44 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /* scanf("format", &variable); */
 /* printf("message", variable(s)) */
 
 int main (int argc, char **argv[]) {
 
-    int choice;
-    char *burger1 = "Royal Cheese";
-    char *burger2 = "Mc Deluxe";
-    char *burger3 = "Mc Bacon";
-    char *burger4 = "Big Mac";
+    const int MIN = 1;
+    const int MAX = 100;
 
-   printf("\t===Menu===\n"
-          "\t1. %s\n"
-          "\t2. %s\n"
-          "\t3. %s\n"
-          "\t4. %s\n"
-          "\tVotre choix ?\n", burger1, burger2, burger3, burger4);
+    int mysteryNumber;
+    int chosenNumber;
 
-   scanf("%d", &choice);
+    srand(time(NULL)); //permet l'utilisation de la fonction rand()
 
-   switch (choice)
-   {
-       case 1:
-           printf("\tTu as choisi un %s\n", burger1);
-           break;
-       case 2:
-           printf("\tTu as choisi un %s\n", burger2);
-           break;
-       case 3:
-           printf("\tTu as choisi un %s\n", burger3);
-           break;
-       case 4:
-           printf("\tTu as choisi un %s\n", burger4);
-           break;
-       default :
-           printf("\tJe n'ai pas compris la commande\n");
-           break;
-   }
+    mysteryNumber = (rand() % (MAX - MIN + 1)) + MIN;
+
+    printf("\t## Bienvenue dans le jeu du nombre mystère ! ##\n");
+    printf("\t## Quel est le nombre ? (entre 1 et 100) ##\n");
+
+    do {
+        scanf("%d", &chosenNumber);
+
+        if ( chosenNumber < 1 || chosenNumber >100) {
+            printf("\t## Le nombre %d n'est pas compris entre 1 et 100. Réessayez :)##\n", chosenNumber);
+        } else if (chosenNumber > mysteryNumber) {
+            printf("\t## Le nombre mystère est plus petit ! Réessayez :) ##\n");
+        } else if (chosenNumber < mysteryNumber) {
+            printf("\t## Le nombre mystère est plus grand ! Réessayez :) ##\n");
+        } else if (chosenNumber == mysteryNumber) {
+            printf("\t## BRAVO ! Vous avez découvert le nombre mystère : %d ! ##\n", mysteryNumber);
+        }
+    } while (chosenNumber != mysteryNumber);
 
     return 0;
 }
