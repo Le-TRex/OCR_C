@@ -1,58 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* scanf("format", &variable); */
+/* printf("message", variable(s)) */
+
 int main (int argc, char **argv[]) {
 
-    char symbole;
-    int operande1;
-    int operande2;
-    int resultat;
-    int reste;
+    int choice;
+    char *burger1 = "Royal Cheese";
+    char *burger2 = "Mc Deluxe";
+    char *burger3 = "Mc Bacon";
+    char *burger4 = "Big Mac";
 
-    printf("\tTapez le symbole dorrespondant à l'opération que vous souhaitez réaliser : \n"
-          "+ : addition\n"
-          "- : sousctraction\n"
-          "* : multiplication\n"
-          "/ : division\n");
+   printf("\t===Menu===\n"
+          "\t1. %s\n"
+          "\t2. %s\n"
+          "\t3. %s\n"
+          "\t4. %s\n"
+          "\tVotre choix ?\n", burger1, burger2, burger3, burger4);
 
-    scanf("%c", &symbole);
+   scanf("%d", &choice);
 
-    printf("\tSaisissez le premier nombre (entier) de l'opération : \n");
-
-    scanf("%d", &operande1);
-
-    printf("\tSaisissez le deuxième nombre (entier) de l'opération : \n");
-
-    scanf("%d", &operande2);
-
-    /*
-     * ascii + ==> 43
-     * ascii - ==> 45
-     * ascii * ==> 42
-     * ascii / ==> 47
-     * */
-
-    if(operande1 == 19 && operande2 == 92){
-        printf("\tHappy Birthday Sister !! XOXO\n");
-    }
-    else if (symbole == 43) {
-        resultat = operande1 + operande2;
-        printf("\t%d %c %d = %d \n", operande1, symbole, operande2, resultat);
-    }else if (symbole == 45) {
-        resultat = operande1 - operande2;
-        printf("\t%d %c %d = %d \n", operande1, symbole, operande2, resultat);
-    }else if (symbole == 42) {
-        resultat = operande1 * operande2;
-        printf("\t%d %c %d = %d \n", operande1, symbole, operande2, resultat);
-    }else if (symbole == 47) {
-        resultat = operande1 / operande2;
-        reste = operande1 % operande2;
-        printf("\t%d %c %d = %d, reste %d \n", operande1, symbole, operande2, resultat, reste);
-    }else{
-        printf("\tLe symbole choisi ne correspond à aucune des opérations possibles.");
-        return 0;
-    }
-
+   switch (choice)
+   {
+       case 1:
+           printf("\tTu as choisi un %s\n", burger1);
+           break;
+       case 2:
+           printf("\tTu as choisi un %s\n", burger2);
+           break;
+       case 3:
+           printf("\tTu as choisi un %s\n", burger3);
+           break;
+       case 4:
+           printf("\tTu as choisi un %s\n", burger4);
+           break;
+       default :
+           printf("\tJe n'ai pas compris la commande\n");
+           break;
+   }
 
     return 0;
 }
